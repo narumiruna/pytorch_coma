@@ -46,6 +46,9 @@ class ComaDataset(InMemoryDataset):
         processed_files = [self.split_term+'_'+pf for pf in processed_files]
         return processed_files
 
+    def download(self):
+        pass
+
     def process(self):
         train_data, val_data, test_data = [], [], []
         train_vertices = []
@@ -140,4 +143,3 @@ if __name__ == '__main__':
         prepare_identity_dataset(data_dir)
     else:
         raise Exception("Only sliced, expression and identity split are supported")
-
